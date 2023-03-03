@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import ListOfItemsComponent from './ListOfItemsComponent';
 
+// WE CAN USE API INSTEAD OF STATIC DATA
 const listOfNames = [{
   name: 'Flowers_Ice_cream',
 }, {
@@ -23,19 +24,23 @@ const listOfNames = [{
 }, {
   name: 'Puppy_Ring',
 }];
+
 function App() {
   const [list, setList] = useState(listOfNames);
+
+  // WE CAN MOVE THIS FUNCTION TO AN OTHER FILE TO REMOVE LOGIC FROM UI
   function onFilter(value) {
     let newArr = [];
     newArr = listOfNames.filter((names) => {
-      return names.name.indexOf(value) !== -1
+      return names.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
     })
     setList(newArr);
   }
 
 
   return (
-    <div>
+    <div className='container'>
+      <h1>List of users by name</h1>
       <ListOfItemsComponent onFilter={onFilter} items={list} />
     </div>
   );

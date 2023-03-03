@@ -11,16 +11,18 @@ export default function ListOfItemsComponent(props) {
     ));
 
     return (
-        <div>
-            <input className='input' placeholder='please fill something to search' onChange={onInputHandler} />
+        <>
+            <input className='input' placeholder='please write a text to search' onChange={onInputHandler} />
             {
                 props.items.length > 0 ?
-                    <ul>
+                    <ul className='items'>
                         {items}
                     </ul>
                     :
-                    <p>No Item Found!</p>
+                    <div className='items'>
+                        <p>No Item Found!</p>
+                    </div>
             }
-        </div>
+        </>
     )
 }
