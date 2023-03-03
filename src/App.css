@@ -39,7 +39,7 @@ input {
 .items {
   background-color: var(--secondary);
   height: auto;
-  min-height: 400px;
+  min-height: 50%;
   overflow-y: auto;
   display: flex;
   justify-content: flex-start;
@@ -48,13 +48,13 @@ input {
   min-width: 30%;
 }
 
-li > p, div>p {
+li > p, ul ~ div>p {
   color: var(--white);
   margin: 10px  10px 5px;
   font-size: large;
 }
 
-input ~ ul {
+ul {
   list-style: none;
   padding: 0;
 }
@@ -62,4 +62,20 @@ input ~ ul {
 li {
   border-bottom: 1px solid var(--background);
   text-align: center;
+}
+
+.input-container {
+  width: 100vw;
+  min-height: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.list-container {
+  display: flex;
+  width: 50vh;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  min-height: 80%;
 }

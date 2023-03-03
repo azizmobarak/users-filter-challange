@@ -1,40 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import ListOfItemsComponent from './ListOfItemsComponent';
-
-// WE CAN USE API INSTEAD OF STATIC DATA
-const listOfNames = [{
-  name: 'Flowers_Ice_cream',
-}, {
-  name: 'Allergies_Cone',
-}, {
-  name: 'Shower_Mail',
-}, {
-  name: 'Breakfast_Light_saber',
-}, {
-  name: 'YouTube_Poop',
-}, {
-  name: 'Ice_cream_Ring',
-}, {
-  name: 'Shower_System',
-}, {
-  name: 'Solar_Toilet',
-}, {
-  name: 'Ice_cream_cone_Post_office',
-}, {
-  name: 'Puppy_Ring',
-}];
+import ListOfItemsComponent from './component/ListOfItemsComponent';
+import { generateUsers } from './utils/helper';
 
 function App() {
-  const [list, setList] = useState(listOfNames);
+  const [initialList, setInitialList] = useState([])
+  const [list, setList] = useState([]);
 
-  // WE CAN MOVE THIS FUNCTION TO AN OTHER FILE TO REMOVE LOGIC FROM UI
+  useEffect(() => {
+    setInitialList(generateUsers());
+    setList(generateUsers());
+  }, []);
+
+  // WE CAN MOVE THIS FUNCTION TO AN OTHER FILE TO REMOVE LOGIC FROM UI (like using redux)
   function onFilter(value) {
-    let newArr = [];
-    newArr = listOfNames.filter((names) => {
-      return names.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
-    })
-    setList(newArr);
+    let filtredUsers = [];
+    filtredUsers = list.filter((names) => names.name.toLowerCase().indexOf(value.toLowerCase()) !== -1)
+    if (value) setList(filtredUsers);
+    else {
+      setList(initialList)
+    }
   }
 
 
