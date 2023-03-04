@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Users, generateUsers, getFiltredList } from 'src/utils/helper';
 import ListOfItemsComponent from './component/ListOfItemsComponent';
-import { generateUsers } from './utils/helper';
 
 function App() {
-  const [initialList, setInitialList] = useState([])
-  const [list, setList] = useState([]);
+  const [initialList, setInitialList] = useState<Users[]>([])
+  const [list, setList] = useState<Users[]>([]);
 
   useEffect(() => {
     setInitialList(generateUsers());
@@ -13,9 +13,9 @@ function App() {
   }, []);
 
   // WE CAN MOVE THIS FUNCTION TO AN OTHER FILE TO REMOVE LOGIC FROM UI (like using redux)
-  function onFilter(value) {
+  function onFilter(value: string) {
     let filtredUsers = [];
-    filtredUsers = list.filter((names) => names.name.toLowerCase().indexOf(value.toLowerCase()) !== -1)
+    filtredUsers = getFiltredList(list, value);
     if (value) setList(filtredUsers);
     else {
       setList(initialList)

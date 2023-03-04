@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false,
+    "baseUrl": "./",
+    "checkJs": false,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "ESNext"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noStrictGenericChecks": false,
+    "paths": {
+      "@root/*": [
+        "./*"
+      ],
+      "src": [
+        "./src"
+      ],
+    },
+    "pretty": true,
+    "removeComments": false,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "target": "ESNext",
+    "types": [
+      "vite/client",
+      "jest"
+    ]
+  },
+  "compileOnSave": false,
+  "include": [
+    "src/**/*",
+    "./vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
