@@ -1,10 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { store } from '../reducer/store';
-import { UsersViewAction } from '../Pages/UsersScreen/actions';
-import { Users } from 'src/Pages/UsersScreen/reducer';
-
-export const getFiltredList = (list: Users[], value: string): Users[] =>
-    list.filter((names) => names.name.toLowerCase().indexOf(value.toLowerCase()) !== -1)
+import { UsersViewAction } from 'src/pages/usersScreen/actions';
+import { Users } from 'src/pages/usersScreen/reducer';
 
 // WE CAN USE API INSTEAD OF STATIC DATA
 export const generateUsers = () => {

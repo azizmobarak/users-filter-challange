@@ -1,5 +1,5 @@
 import { Reducer, combineReducers } from 'redux';
-import { UsersReducer, UsersState } from 'src/Pages/UsersScreen/reducer';
+import { UsersReducer, UsersState } from 'src/pages/usersScreen/reducer';
 
 type ZippedReducersType<T> = {
     [key in keyof T]: Reducer<T[key]>;

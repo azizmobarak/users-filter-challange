@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import 'src/App.css';
 import { generateUsers } from 'src/utils/helper';
 import ListOfItemsComponent from 'src/component/ListOfItemsComponent';

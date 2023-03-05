@@ -1,6 +1,6 @@
 import React from 'react';
 import { generateKeyString } from 'src/utils/strings';
-import { Users } from 'src/Pages/UsersScreen/reducer';
+import { Users } from 'src/pages/usersScreen/reducer';
 
 type Props = {
     onFilter: (value: string) => void;
