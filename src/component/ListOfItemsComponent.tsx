@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Users } from 'src/utils/helper';
+import React from 'react';
 import { generateKeyString } from 'src/utils/strings';
+import { Users } from 'src/Pages/UsersScreen/reducer';
 
 type Props = {
     onFilter: (value: string) => void;
@@ -8,9 +8,7 @@ type Props = {
 }
 
 export default function ListOfItemsComponent(props: Props) {
-    const onInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        props.onFilter(event.target.value)
-    }
+    const onInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => props.onFilter(event.target.value);
 
     const items = props.items.map((item, index) =>
     (
