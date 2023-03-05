@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { store } from '../reducer/store';
-import { UsersViewAction } from 'src/pages/usersScreen/actions';
-import { Users } from 'src/pages/usersScreen/reducer';
+import { UsersViewAction } from 'src/Pages/UsersScreen/actions';
+import { Users } from 'src/Pages/UsersScreen/reducer';
 
 // WE CAN USE API INSTEAD OF STATIC DATA
 export const generateUsers = () => {

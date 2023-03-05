@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Users from './pages/usersScreen/Users'
+import Users from './Pages/UsersScreen/Users'
 import { Provider } from 'react-redux'
 import { store } from 'src/reducer/store'
 

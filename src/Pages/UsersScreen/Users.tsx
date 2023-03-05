@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
 import 'src/App.css';
+import React, { useEffect } from 'react';
 import { generateUsers } from 'src/utils/helper';
 import ListOfItemsComponent from 'src/component/ListOfItemsComponent';
 import { useSelector } from 'react-redux';
